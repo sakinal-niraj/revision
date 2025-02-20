@@ -1,7 +1,9 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import GoogleSignUpButton from '../../components/GoogleSignupButton';
+import GoogleSignInButton from '../../components/GoogleSigInButton';
+import { Link } from 'react-router-dom';
+
 
 function Signup() {
     return (
@@ -25,10 +27,17 @@ function Signup() {
                     <Button variant="primary" type="submit" className='signup-button'>
                         Signup
                     </Button>
+                    <Form.Text>Already have an account?
+                        <Link to={'/login'}>Signin</Link>
+                    </Form.Text>
                 </Form.Group>
 
+                <div className='signup-divider'>
+                    or
+                </div>
+
                 <Form.Group className='signup-form-btn'>
-                    <GoogleSignUpButton />
+                    <GoogleSignInButton />
                 </Form.Group>
             </Form>
         </div>

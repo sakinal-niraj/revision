@@ -9,7 +9,7 @@
 .form-container .signup-form {
   width: 450px;
   background-color: white;
-  padding: 10px 20px;
+  padding: 20px 20px;
   border-radius: 6px;
 }
 .form-container .signup-form h1 {
@@ -25,11 +25,35 @@
 }
 .form-container .signup-form .signup-form-button-container {
   text-align: center;
+  margin: 20px 0;
 }
 .form-container .signup-form .signup-form-button-container .signup-button {
   width: 100%;
-  margin: 10px 0;
   padding: 10px;
+}
+.form-container .signup-form .signup-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+  color: #9a9a9a;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.form-container .signup-form .signup-divider::after, .form-container .signup-form .signup-divider::before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #ccc;
+}
+.form-container .signup-form .signup-divider::after {
+  margin-left: 10px;
+  margin-top: 2px;
+}
+.form-container .signup-form .signup-divider::before {
+  margin-top: 2px;
+  margin-right: 10px;
 }
 .form-container .signup-form .signup-form-btn {
   margin-left: 85px;
