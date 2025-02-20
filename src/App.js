@@ -7,12 +7,12 @@ import './assets/style/signup.scss';
 import './index.css';
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const location = useLocation();
   useEffect(() => {
 
     const timer = setTimeout(() => {
-      setLoading(false);
+      // setLoading(false);
     }, 2000);
 
     // dispatch(fetchLocation());
