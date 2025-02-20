@@ -1,0 +1,41 @@
+@import 'mixin';
+
+.form-container{
+    @include full-width-height;
+    @include flex-center-align;
+    background-color: rgb(243, 243, 243);
+    .signup-form {
+        width: 450px;
+        background-color: white;
+        padding: 10px 20px;
+        border-radius: 6px;
+
+        h1{
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .signup-form-input-container{
+            margin: 16px 0;
+
+            .signup-form-input{
+                padding: 10px;
+            }
+        }
+
+        .signup-form-button-container{
+            text-align: center;
+
+            .signup-button{
+                width: 100%;
+                margin: 10px 0;
+                padding: 10px;
+            }
+        }
+
+        .signup-form-btn{
+            margin-left: 85px;
+        }
+    }
+}

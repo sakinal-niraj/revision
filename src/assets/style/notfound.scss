@@ -1,0 +1,10 @@
+@import '_mixin';
+
+.not-found{
+    background: #000;
+    color: red;
+    font-size: 4rem;
+    font-weight: 800;
+    @include flex-center-align;
+    height: 100vh;
+}

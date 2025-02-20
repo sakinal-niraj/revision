@@ -1,0 +1,36 @@
+.form-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(243, 243, 243);
+}
+.form-container .signup-form {
+  width: 450px;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+.form-container .signup-form h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+.form-container .signup-form .signup-form-input-container {
+  margin: 16px 0;
+}
+.form-container .signup-form .signup-form-input-container .signup-form-input {
+  padding: 10px;
+}
+.form-container .signup-form .signup-form-button-container {
+  text-align: center;
+}
+.form-container .signup-form .signup-form-button-container .signup-button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+.form-container .signup-form .signup-form-btn {
+  margin-left: 85px;
+}/*# sourceMappingURL=signup.css.map */

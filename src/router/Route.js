@@ -1,15 +1,28 @@
-import Home from "../view/home/Home";
-import Result from "../view/result/Result";
+import NotFound from "../components/NotFound";
+import Home from "../view/user/home/Home";
+import Login from "../view/user/Login";
+import Result from "../view/user/result/Result";
+import Signup from "../view/user/Signup";
 
 export const routes = [
     {
         path:'/',
-        title:'Home',
         element:<Home />
     },
     {
-        path:'/result',
-        title:'Result',
+        path:'result',
         element:<Result />
+    },
+    {
+        path:'signup',
+        element:<Signup />
+    },
+    {
+        path:'login',
+        element:<Login />        
+    },
+    {
+        path:'*',
+        element:<NotFound />
     }
 ];
