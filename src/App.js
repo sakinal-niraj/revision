@@ -24,11 +24,11 @@ function App() {
 
   return (
     <div className="main-container">
-      {loading ? (
+      {/* {loading ? ( */}
         <div className="d-flex justify-content-center align-items-center vh-100">
           <Loader />
         </div>
-      ) : (
+      {/* ) : ( */}
         <>
           {location.pathname === '/signup' || location.pathname === '/login' ? '': <SideBar />}
           <div className="content">
@@ -40,7 +40,7 @@ function App() {
             </Routes>
           </div>
         </>
-      )}
+      {/* )} */}
 
     </div>
   );
