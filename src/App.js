@@ -4,6 +4,7 @@ import { routes } from './router/Route';
 import SideBar from './components/SideBar';
 import Loader from './components/Loder';
 import './assets/style/signup.scss';
+import './index.css';
 
 function App() {
   const [loading, setLoading] = useState(true);
