@@ -19,7 +19,7 @@ function Login() {
 
     // handlnig input change
     const handleInputChange = (e) => {
-        const { name, value } = e.traget;
+        const { name, value } = e.target;
         setLoginData((prev) => ({
             ...prev,
             [name]: value,
