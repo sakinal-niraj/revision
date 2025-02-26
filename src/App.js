@@ -4,6 +4,7 @@ import { routes } from './router/Route';
 import SideBar from './components/SideBar';
 import Loader from './components/Loder';
 import './assets/style/signup.scss';
+import './assets/style/category.scss';
 import './index.css';
 import PrivateRoute from './components/PrivateRoute';
 import Login from './view/user/Login.jsx';
@@ -22,7 +23,6 @@ function App() {
     // dispatch(fetchLocation());
 
     return () => clearTimeout(timer);
-    // }, [dispatch]);
   }, []);
 
 

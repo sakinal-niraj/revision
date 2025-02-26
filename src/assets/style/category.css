@@ -1,0 +1,31 @@
+.category-form-container {
+  width: 100%;
+  padding: 10px;
+}
+.category-form-container form {
+  min-width: 300px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  background: #72e3d6;
+  border-radius: 10px;
+}
+.category-form-container form h1 {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+.category-form-container form div {
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
+.category-form-container form div label {
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+  text-align: left;
+}
+.category-form-container form div button {
+  margin-top: 5px;
+}/*# sourceMappingURL=category.css.map */

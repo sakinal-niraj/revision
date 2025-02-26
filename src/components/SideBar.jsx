@@ -15,6 +15,8 @@ const SideBar = () => {
 
   const menuItems = [
     { path: '/', icon: 'columns', label: 'Dashboard' },
+    { path: '/category', icon: 'columns', label: 'Std' },
+    { path: '/subcategory', icon: 'columns', label: 'subject' },
   ];
 
   return (

@@ -35,7 +35,7 @@ function Signup() {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
-                        title: "Logged in successfully",
+                        title: "Singup successful",
                         showConfirmButton: false,
                         timer: 1500
                     });
