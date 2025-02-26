@@ -14,7 +14,6 @@ const GoogleSignInButton = () => {
             const user = result.user;
             console.log(user.email);
             const token = await user.getIdToken();
-
             if (token) {
                 navigate('/');
             }            

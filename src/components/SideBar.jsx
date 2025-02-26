@@ -8,6 +8,7 @@ import {
   CDBSidebarMenuItem,
 } from 'cdbreact';
 import { Link, useLocation } from 'react-router-dom';
+import Logout from './Logout';
 
 const SideBar = () => {
   const location = useLocation();
@@ -47,7 +48,7 @@ const SideBar = () => {
               padding: '20px 5px',
             }}
           >
-            {/* Sidebar Footer */}
+            <Logout />
           </div>
         </CDBSidebarFooter>
       </CDBSidebar>
