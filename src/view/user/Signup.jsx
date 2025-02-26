@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import GoogleSignInButton from '../../components/GoogleSigInButton';
 import { Link, useNavigate } from 'react-router-dom';
-import { createUserWithEmailAndPassword, getIdToken, sendEmailVerification } from 'firebase/auth';
+import { createUserWithEmailAndPassword} from 'firebase/auth';
 import { auth } from '../../firebase/firebase';
 import Swal from 'sweetalert2';
 
@@ -29,9 +29,9 @@ function Signup() {
         createUserWithEmailAndPassword(auth, formData.email, formData.password)
             .then(userInfo => {
                 const token = userInfo.user.getIdToken();
-                localStorage.setItem('token', token);
-                navigate('/');
                 if (token) {
+                    localStorage.setItem('token', token);
+                    navigate('/');
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
