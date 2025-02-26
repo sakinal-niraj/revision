@@ -1,25 +1,78 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import GoogleSignInButton from '../../components/GoogleSigInButton';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { createUserWithEmailAndPassword, getIdToken, sendEmailVerification } from 'firebase/auth';
+import { auth } from '../../firebase/firebase';
+import Swal from 'sweetalert2';
 
 
 function Signup() {
+    const [formData, setFormData] = useState({
+        email: "",
+        password: "",
+    });
+    const navigate = useNavigate();
+
+    // handle form input change
+    const handleSignupInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    }
+
+    const handleSignup = (e) => {
+        e.preventDefault();
+        createUserWithEmailAndPassword(auth, formData.email, formData.password)
+            .then(userInfo => {
+                const token = userInfo.user.getIdToken();
+                localStorage.setItem('token', token);
+                navigate('/');
+                if (token) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Logged in successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
     return (
         <div className='form-container'>
-            <Form className='signup-form' >
+            <Form className='signup-form' onSubmit={handleSignup} >
                 <h1>Signup </h1>
                 {/* Email id */}
                 <Form.Group className='signup-form-input-container' controlId="formBasicEmail">
                     <Form.Label>Email-Id</Form.Label>
-                    <Form.Control className='signup-form-input' type="email" placeholder="john@gmail.com" />
+                    <Form.Control
+                        className='signup-form-input'
+                        type="email"
+                        placeholder="john@gmail.com"
+                        value={formData.email}
+                        name="email"
+                        onChange={handleSignupInputChange}
+                    />
                 </Form.Group>
 
                 {/* Password */}
                 <Form.Group className='signup-form-input-container' controlId='formBasicPassword'>
                     <Form.Label>Password</Form.Label>
-                    <Form.Control className='signup-form-input' type='password' placeholder='John@123' />
+                    <Form.Control
+                        className='signup-form-input'
+                        type='password'
+                        placeholder='John@123'
+                        value={formData.password}
+                        name="password"
+                        onChange={handleSignupInputChange}
+                    />
                 </Form.Group>
 
                 {/* Button */}

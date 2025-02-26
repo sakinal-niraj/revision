@@ -5,6 +5,10 @@ import SideBar from './components/SideBar';
 import Loader from './components/Loder';
 import './assets/style/signup.scss';
 import './index.css';
+import PrivateRoute from './components/PrivateRoute';
+import Login from './view/user/Login.jsx';
+import Signup from './view/user/Signup.jsx';
+import PublicRoute from './components/PublicRoute.jsx';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -30,13 +34,19 @@ function App() {
         </div>
       ) : (
         <>
-          {location.pathname === '/signup' || location.pathname === '/login' ? '': <SideBar />}
+          {location.pathname === '/signup' || location.pathname === '/login' ? '' : <SideBar />}
           <div className="content">
             <Routes>
-              <Route path="/home" element={<Navigate to="/" replace />} />
-              {routes?.map((item, index) => (
-                <Route key={index} path={item?.path} element={item?.element} />
-              ))}
+              <Route element={<PublicRoute />}>
+                <Route path='/login' element={<Login />} />
+                <Route path='/signup' element={<Signup />} />
+              </Route>
+              <Route element={<PrivateRoute />} >
+                <Route path="/home" element={<Navigate to="/" replace />} />
+                {routes?.map((item, index) => (
+                  <Route key={index} path={item?.path} element={item?.element} />
+                ))}
+              </Route>
             </Routes>
           </div>
         </>

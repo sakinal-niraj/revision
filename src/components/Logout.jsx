@@ -17,6 +17,7 @@ function Logout() {
 
             if (result.isConfirmed) {
                 await signOut(auth);
+                localStorage.removeItem('token');
                 await Swal.fire("Loged out!", "", "success");
                 navigate('/login');
             }

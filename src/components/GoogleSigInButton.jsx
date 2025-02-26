@@ -3,6 +3,7 @@ import GoogleButton from 'react-google-button';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const GoogleSignInButton = () => {
     const navigate = useNavigate();
@@ -15,6 +16,14 @@ const GoogleSignInButton = () => {
             console.log(user.email);
             const token = await user.getIdToken();
             if (token) {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Logged in successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                localStorage.setItem('token',token);
                 navigate('/');
             }            
         } catch (error) {
