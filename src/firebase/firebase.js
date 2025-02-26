@@ -4,7 +4,7 @@ import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDZvStT3UsWaRF2VCff9Zgemg1lUzRacJg",
-  authDomain: "revision-drab.vercel.app/",
+  authDomain: "questionbank-ffb48.firebaseapp.com",
   projectId: "questionbank-ffb48",
   storageBucket: "questionbank-ffb48.appspot.com",
   messagingSenderId: "477742068905",
